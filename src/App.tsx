@@ -1,5 +1,13 @@
+import AppBar from "./components/AppBar";
+import UnsplashGallery from "./components/UnsplashGallery";
+
 function App() {
-  return <h1>Unsplash app</h1>;
+  return (
+    <>
+      <AppBar />
+      <UnsplashGallery />
+    </>
+  );
 }
 
 export default App;
