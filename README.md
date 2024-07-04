@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Unsplash Image Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Image](path/to/your/project/image.png)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a simple web application that fetches and displays images from the Unsplash API. It allows users to search for images based on keywords and view them in a grid layout.
 
-## Expanding the ESLint configuration
+### Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Fetches images from the Unsplash API.
+- Displays images in a responsive grid using Material-UI (MUI).
+- Implements search functionality to filter images by keywords.
+- Uses Redux for state management.
+- Integrates Redux Saga for handling asynchronous actions.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- React
+- Redux
+- Redux Saga
+- Material-UI (MUI)
+- Axios (for API requests)
+- Vite (for project setup)
+
+## Setup Instructions
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/samaila-bashir/unsplash-app.git
+
+   cd your-repo
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables::**
+
+Create a .env file in the root directory and add your Unsplash API key:
+
+```bash
+VITE_UNSPLASH_API_KEY=your_unsplash_api_key_here
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
