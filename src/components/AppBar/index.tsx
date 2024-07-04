@@ -7,7 +7,7 @@ import { Search, SearchIconWrapper, StyledInputBase } from "./AppBar.styled";
 
 export default function AppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, marginBottom: 2 }}>
       <SearchAppbar position="static">
         <Toolbar>
           <Typography
