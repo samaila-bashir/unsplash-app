@@ -1,30 +1,17 @@
 import Grid from "@mui/material/Grid";
 import { Item } from "./UnsplashGallery.style";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { UnsplashImage } from "../../types";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 export default function UnsplashGallery() {
-  const [images, setImages] = useState<UnsplashImage[]>([]);
+  const dispatch = useDispatch();
+  const images = useSelector((state: RootState) => state.images.images);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await axios.get("https://api.unsplash.com/photos", {
-          params: {
-            client_id: import.meta.env.VITE_UNSPLASH_API_KEY,
-            per_page: 12,
-          },
-        });
-
-        setImages(response.data);
-      } catch (error) {
-        console.error("Error fetching images from Unsplash:", error);
-      }
-    };
-
-    fetchImages();
-  }, []);
+    dispatch({ type: "LOAD_IMAGES" });
+  }, [dispatch]);
 
   return (
     <Grid
